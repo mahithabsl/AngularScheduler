@@ -1,0 +1,30 @@
+//to load remote data from the url rather than saving it locally.Learn how to make the url link
+
+
+import { Component } from '@angular/core';
+import { View, EventSettingsModel} from '@syncfusion/ej2-angular-schedule';
+import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+
+@Component({
+  selector: 'app-root',
+  template: '<ejs-schedule height="630" width="850" [selectedDate]="setDate" [eventSettings]="eventObject" [currentView]="setView" ></ejs-schedule>',
+  //templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'schedulerapp';
+  public setView: View = 'WorkWeek';
+  public setDate: Date = new Date(2017, 5, 13);
+
+  private eventData: DataManager = new DataManager({
+
+    url: 'https://js.syncfusion.com/demos/ejservices/api/Schedule/LoadData',
+    adaptor: new WebApiAdaptor,
+    crossDomain:true
+  });
+
+  public eventObject: EventSettingsModel = {
+    dataSource: this.eventData,
+  }
+  
+}

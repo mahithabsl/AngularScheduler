@@ -1,3 +1,5 @@
+The Angular Scheduler, or event calendar, is a fully-featured calendar component that that allows users to manage their time efficiently. It facilitates easy resource scheduling, rescheduling appointments through editor pop-ups, drag and drop, and resizing actions.
+
 # Schedulerapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
